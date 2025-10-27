@@ -1,4 +1,5 @@
 from times import compute_overlap_time, time_range
+import pytest
 
 def test_given_input():
     large = time_range("2010-01-12 10:00:00", "2010-01-12 12:00:00")
@@ -32,3 +33,7 @@ def test_edge_case_overlap():
     result = compute_overlap_time(range1, range2)
     expected = []
     assert result == expected
+
+def test_invalid_time_range():
+    with pytest.raises(ValueError):
+        time_range("2022-01-01 12:00:00", "2022-01-01 10:00:00")
