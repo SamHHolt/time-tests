@@ -23,7 +23,6 @@ def test_many_intervals():
                 ('2022-01-01 10:05:00', '2022-01-01 10:55:00'), 
                 ('2022-01-01 10:55:00', '2022-01-01 11:00:00'), 
                 ('2022-01-01 11:00:00', '2022-01-01 11:45:00')]
-    print("Result:", result)
     assert result == expected
 
 def test_edge_case_overlap():
