@@ -1,7 +1,7 @@
 import datetime
 import requests
 import json
-from config import API_KEY
+#from config import API_KEY # Uncomment this line if you have a config.py with your API key
 
 def time_range(start_time, end_time, number_of_intervals=1, gap_between_intervals_s=0):
     if start_time >= end_time:
