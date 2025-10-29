@@ -22,8 +22,8 @@ def iss_passes(latitude, longitude):
         passes = response.json().get("passes", [])
         passes_times = [
             (
-                datetime.datetime.fromtimestamp(p["startUTC"], datetime.UTC).strftime("%Y-%m-%d %H:%M:%S"),
-                datetime.datetime.fromtimestamp(p["endUTC"], datetime.UTC).strftime("%Y-%m-%d %H:%M:%S")
+                datetime.datetime.fromtimestamp(p["startUTC"], datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S"),
+                datetime.datetime.fromtimestamp(p["endUTC"], datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
             )
             for p in passes
         ]
